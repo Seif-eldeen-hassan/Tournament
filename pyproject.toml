@@ -4,4 +4,9 @@ version = "0.1.0"
 description = ""
 authors = ["Your Name <you@example.com>"]
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+    "discord-py>=2.5.2",
+    "flask>=3.1.1",
+    "gspread==6.1.4",
+    "oauth2client>=4.1.3",
+]

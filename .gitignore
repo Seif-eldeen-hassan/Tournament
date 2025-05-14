@@ -128,6 +128,10 @@ ENV/
 env.bak/
 venv.bak/
 
+
+carrotg-ca78b753bcee.json
+
+
 # Spyder project settings
 .spyderproject
 .spyproject
