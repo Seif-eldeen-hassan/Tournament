@@ -13,6 +13,19 @@ load_dotenv()
 DISCORD_BOT_TOKEN = os.getenv("DISCORD_BOT_TOKEN")
 GOOGLE_CREDENTIALS_PATH = os.getenv("GOOGLE_CREDENTIALS_PATH")
 
+app = Flask('')
+
+@app.route('/')
+def home():
+    return "I'm alive!"
+
+def run():
+    app.run(host='0.0.0.0', port=8080)
+
+def keep_alive():
+    t = Thread(target=run)
+    t.start()
+
 intents = discord.Intents.default()
 intents.message_content = True
 intents.members = True
@@ -179,6 +192,7 @@ async def on_ready():
     print(f"🤖 Logged in as {bot.user}")
     bot.add_view(RegisterView())
 
+keep_alive()
 # Run the bot using your token
 bot.run(DISCORD_BOT_TOKEN)
 
